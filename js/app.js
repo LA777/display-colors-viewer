@@ -1,5 +1,5 @@
-(function ($) {
-    var showColors = function () {
+(function($) {
+    var showColors = function() {
         var columnCount = 3;
 
         for (var i = 0; i < colors.length; i++) {
@@ -15,7 +15,7 @@
         }
     };
 
-    var showGradients = function () {
+    var showGradients = function() {
         var columnCount = 3;
 
         for (var i = 0; i < gradients.length; i++) {
@@ -31,7 +31,7 @@
         }
     };
 
-    var showPictures = function () {
+    var showPictures = function() {
         var columnCount = 3;
 
         for (var i = 0; i < pictures.length; i++) {
@@ -50,7 +50,7 @@
         subscribeOnPictureCard();
     };
 
-    var showJudderBox = function () {
+    var showJudderBox = function() {
         var columnCount = 6;
         var itemsCount = 24;
 
@@ -70,16 +70,6 @@
     };
 
     function moveJumpBoxToNextBox(itemIndex) {
-
-        // if(itemIndex == 0) {
-        //     $('div.judder-box button.box-item').first().addClass('jump-box');
-        // }
-
-        //var boxes = $('div.judder-box button.box-item').toArray();
-
-        //var = $('div.judder-box').find('button.box-item.jump-box');
-        // $(boxes[itemIndex]).addClass('jump-box');      
-
         var boxes = $('div.judder-box button.box-item').toArray();
 
         if (itemIndex >= boxes.length) {
@@ -88,17 +78,12 @@
             itemIndex = boxes.length - 1;
         }
 
-        // $(boxes[itemIndex]).addClass('jump-box');
-        // var nextItemIndex = itemIndex + 1;
-        
         $('div.judder-box button.box-item.jump-box').removeClass('jump-box');
         $(boxes[itemIndex]).addClass('jump-box');
 
         var timeoutDelay = 35;
-        log("itemIndex: " + itemIndex + " - timout: " + timeoutDelay);
-
         if (isJudderTabActive) {
-            setTimeout(function () {
+            setTimeout(function() {
                 moveJumpBoxToNextBox(itemIndex + 1);
             }, timeoutDelay);
         } else {
@@ -106,45 +91,7 @@
         }
     };
 
-    var moveJumpBox = function () {
-        var boxes = $('div.judder-box').find('button.box-item').toArray();
-        //$(boxes[0]).addClass('jump-box');        
-        var timeout = Math.round(1000 / boxes.length);
-
-        var myVar = setTimeout(function () { moveJumpBoxToNextBox(); }, 1000);
-
-
-        // var previousBoxIndex = boxes.length - 1;
-
-        // for (var i = 0; i < 5; i++) {      
-        //     if  (i >= boxes.length) {
-        //         i = 0;
-        //         previousBoxIndex = boxes.length - 1;
-        //     }
-        //     $(boxes[previousBoxIndex]).removeClass("jump-box");
-        //     $(boxes[i]).addClass("jump-box");
-        //     previousBoxIndex = i;
-
-        //     setTimeout(function() { log("move next") }, 1000);
-        // }
-
-
-        //setTimeout(function() { moveJumpBoxToNextBox(1, timeout); }, timeout);
-
-        // var previousBoxIndex = boxes.length - 1;
-
-        // for (var i = 0; boxes.length > 0; i++) {      
-        //     if  (i >= boxes.length) {
-        //         i = 0;
-        //         previousBoxIndex = boxes.length - 1;
-        //     }      
-        //     boxes[previousBoxIndex].removeClass("jump-box");
-        //     boxes[i].addClass("jump-box");
-        //     previousBoxIndex = i;
-        // }
-    };
-
-    var paintNextColor = function () {
+    var paintNextColor = function() {
         var nextColorIndex = currentColorIndex + 1;
         if (nextColorIndex > currentCardArray.length - 1) {
             nextColorIndex = 0;
@@ -154,7 +101,7 @@
         currentColorIndex = nextColorIndex;
     };
 
-    var paintPrevColor = function () {
+    var paintPrevColor = function() {
         var prevColorIndex = currentColorIndex - 1;
         if (prevColorIndex < 0) {
             prevColorIndex = currentCardArray.length - 1;
@@ -172,13 +119,13 @@
     var imageResolution = "FHD";
     var isJudderTabActive = false;
 
-    var paintColor = function (colorIndex) {
+    var paintColor = function(colorIndex) {
         var colorIndexNumber = Number(colorIndex);
         currentColorIndex = colorIndexNumber;
         $('.background').addClass('color-' + currentCardArray[colorIndexNumber].name);
     };
 
-    var escapeFullScreen = function () {
+    var escapeFullScreen = function() {
         $('.background').hide();
         $('.content').show();
         $('.background').removeClass('color-' + currentCardArray[currentColorIndex].name);
@@ -188,46 +135,40 @@
         isFullScreen = false;
     };
 
-    var displayPicture = function (pictureIndex) {
+    var displayPicture = function(pictureIndex) {
         var pictureIndexNumber = Number(pictureIndex);
         currentArrayIndex = pictureIndexNumber;
         $('.background').css('background-image', `url('${getImageUrl(currentArrayIndex)}')`);
         $('.background').addClass('picture-card');
     };
 
-    var displayNextPicture = function () {
+    var displayNextPicture = function() {
         var nextArrayIndex = currentArrayIndex + 1;
         if (nextArrayIndex > currentCardArray.length - 1) {
             nextArrayIndex = 0;
         }
 
-        $('.background').css('background-image',
-            `url('${getImageUrl(nextArrayIndex)}')`);
-
+        $('.background').css('background-image', `url('${getImageUrl(nextArrayIndex)}')`);
         currentArrayIndex = nextArrayIndex;
     };
 
-    var displayPrevPicture = function () {
+    var displayPrevPicture = function() {
         var nextArrayIndex = currentArrayIndex - 1;
         if (nextArrayIndex < 0) {
             nextArrayIndex = currentCardArray.length - 1;
         }
 
-        $('.background').css('background-image',
-            `url('${getImageUrl(nextArrayIndex)}')`);
-
+        $('.background').css('background-image', `url('${getImageUrl(nextArrayIndex)}')`);
         currentArrayIndex = nextArrayIndex;
     };
 
-    var getImageUrl = function (index) {
-        log("getImageUrl imageResolution - " + imageResolution);
+    var getImageUrl = function(index) {
         var imgUrl = `pics/${imageResolution}/${pictures[index].name}.${pictures[index].extension}`;
-        log(imgUrl);
         return imgUrl;
     }
 
-    var subscribeOnPictureCard = function () {
-        $('button.picture-card').click(function (item) {
+    var subscribeOnPictureCard = function() {
+        $('button.picture-card').click(function(item) {
             var pictureIndex = Number($(item.target).attr('array-index'));
             $('.content').hide();
             $('.background').show();
@@ -237,15 +178,15 @@
         });
     }
 
-    $.app = function () {
-        this.run = function () {
+    $.app = function() {
+        this.run = function() {
             showColors();
             currentCardArray = colors;
             showGradients();
             showPictures();
             showJudderBox();
 
-            $('button.btn-card').click(function (item) {
+            $('button.btn-card').click(function(item) {
                 var colorIndex = Number($(item.target).attr('array-index'));
                 $('.content').hide();
                 $('.background').show();
@@ -253,7 +194,7 @@
                 isFullScreen = true;
             });
 
-            $('.background').mousedown(function (e) {
+            $('.background').mousedown(function(e) {
                 if (e.which === 3) {
                     e.preventDefault();
                     escapeFullScreen();
@@ -266,11 +207,11 @@
                 }
             });
 
-            $(document).contextmenu(function () {
+            $(document).contextmenu(function() {
                 return false;
             });
 
-            $(document).keydown(function (e) {
+            $(document).keydown(function(e) {
                 const escapeKeyCode = 27;
                 const leftArrowKeyCode = 37;
                 const rightArrowKeyCode = 39;
@@ -324,7 +265,7 @@
                 }
             });
 
-            $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+            $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
                 var val = $(e.target).attr('aria-controls');
                 isImagesTabActive = false;
                 isJudderTabActive = false;
@@ -337,29 +278,36 @@
                     isImagesTabActive = true;
                     currentCardArray = pictures;
                 } else if (val === 'judder') {
-                    //moveJumpBox();
                     isJudderTabActive = true;
                     moveJumpBoxToNextBox(0);
                 }
             });
 
-            $("#resolution-select").change(function () {
+            var url = window.location.href;
+            if (url.indexOf("#") > 0) {
+                var activeTab = url.substring(url.indexOf("#") + 1);
+                $('.nav[role="tablist"] a[href="#' + activeTab + '"]').tab('show');
+            }
+
+            $('a[role="tab"]').on("click", function() {
+                var newUrl;
+                const hash = $(this).attr("href");
+                newUrl = url.split("#")[0] + hash;
+                history.replaceState(null, null, newUrl);
+            });
+
+            $("#resolution-select").change(function() {
                 var selectedResolution = $(this).val();
-                log("imageResolution - " + imageResolution);
                 imageResolution = selectedResolution;
-                log("imageResolution - " + imageResolution);
-                log("selectedResolution: " + selectedResolution);
                 $('.pictures-cards').empty();
                 showPictures();
             });
-
-
         };
 
         return this;
     };
 
-    var log = function (text) {
+    var log = function(text) {
         console.log(text);
     };
 
