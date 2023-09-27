@@ -7,7 +7,7 @@
     <base href="~">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="css/bootstrap-4.3.1.min.css">
+    <link rel="stylesheet" href="css/bootstrap-5.3.2.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -16,31 +16,31 @@
     <div class="content text-light">
         <ul id="navTab" class="nav nav-tabs justify-content-end" role="tablist">
             <li role="presentation" class="nav-item">
-                <a href="#colors" class="nav-link active" aria-controls="colors" role="tab" data-toggle="tab">Colors</a>
+                <a href="#colors" class="nav-link active" aria-controls="colors" role="tab" data-bs-toggle="tab" data-bs-target="#colors">Colors</a>
             </li>
             <li role="presentation" class="nav-item">
-                <a href="#gradients" class="nav-link" aria-controls="gradients" role="tab" data-toggle="tab">Gradients</a>
+                <a href="#gradients" class="nav-link" aria-controls="gradients" role="tab" data-bs-toggle="tab" data-bs-target="#gradients">Gradients</a>
             </li>
             <li role="presentation" class="nav-item">
-                <a href="#images" class="nav-link" aria-controls="images" role="tab" data-toggle="tab">Images</a>
+                <a href="#images" class="nav-link" aria-controls="images" role="tab" data-bs-toggle="tab" data-bs-target="#images">Images</a>
             </li>
             <li role="presentation" class="nav-item">
-                <a href="#judder" class="nav-link" aria-controls="judder" role="tab" data-toggle="tab">Judder</a>
+                <a href="#judder" class="nav-link" aria-controls="judder" role="tab" data-bs-toggle="tab" data-bs-target="#judder">Judder</a>
             </li>
             <li role="presentation" class="nav-item">
-                <a href="#about" class="nav-link" aria-controls="about" role="tab" data-toggle="tab">About</a>
+                <a href="#about" class="nav-link" aria-controls="about" role="tab" data-bs-toggle="tab" data-bs-target="#about">About</a>
             </li>
         </ul>
 
         <!-- Tab panes -->
         <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="colors">
+            <div role="tabpanel" class="tab-pane fade show active" id="colors" tabindex="0">
                 <div class="container">
                     <div class="color-cards margin-top-20">
                     </div>
                 </div>
             </div>
-            <div role="tabpanel" class="tab-pane fade" id="gradients">
+            <div role="tabpanel" class="tab-pane fade" id="gradients" tabindex="0">
                 <div class="container">
                     <div class="gradients-cards margin-top-20">
                     </div>
@@ -52,7 +52,7 @@
                         <div class="col-8"></div>
                         <div class="col-4">
                             <label class="btn-label float-left">Resolution: </label>
-                            <select id="resolution-select" class="select-control form-control">
+                            <select id="resolution-select" class="form-select select-control form-control bg-secondary text-white">
                                 <option selected value="FHD">FHD 1920x1080</option>
                                 <option value="2K">2K 2560x1440</option>
                                 <option value="4K">4K 3840x2160</option>
@@ -70,7 +70,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <video width="640" height="480" controls>
-                                    <source src="video/judder 23.98 1080.mp4" type="video/mp4">                                  
+                                    <source src="video/judder 23.98 1080.mp4" type="video/mp4">
                                 </video>
                                 <div>Judder test - 23.98 FPS.</div>
                             </div>
@@ -78,7 +78,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <video width="640" height="480" controls>
-                                <source src="video/judder 25 1080.mp4" type="video/mp4">                                  
+                                <source src="video/judder 25 1080.mp4" type="video/mp4">
                             </video>
                                 <div>Judder test - 25 FPS.</div>
                             </div>
@@ -86,7 +86,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <video width="640" height="480" controls>
-                                    <source src="video/judder 29.97 1080.mp4" type="video/mp4">                                 
+                                    <source src="video/judder 29.97 1080.mp4" type="video/mp4">
                                 </video>
                                 <div>Judder test - 29.97 FPS.</div>
                             </div>
@@ -135,8 +135,8 @@
             </div>
         </div>
     </div>
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/bootstrap.bundle-4.3.1.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.bundle-5.3.2.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/runner.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J2XNMR1K18"></script>
@@ -147,7 +147,6 @@
             dataLayer.push(arguments);
         }
         gtag('js', new Date());
-
         gtag('config', 'G-J2XNMR1K18');
     </script>
 </body>
