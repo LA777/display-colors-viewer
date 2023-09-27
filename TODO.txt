@@ -1,0 +1,8 @@
+
+TODO
+- add Judder video for 23.9 FPS
++ update jquery
++ update bootstrap
+
+
+
