@@ -31,105 +31,125 @@
                 <a href="#about" class="nav-link" aria-controls="about" role="tab" data-bs-toggle="tab" data-bs-target="#about">About</a>
             </li>
         </ul>
-
-        <!-- Tab panes -->
-        <div class="tab-content">
-            <div role="tabpanel" class="tab-pane fade show active" id="colors" tabindex="0">
-                <div class="container">
-                    <div class="color-cards margin-top-20">
-                    </div>
-                </div>
-            </div>
-            <div role="tabpanel" class="tab-pane fade" id="gradients" tabindex="0">
-                <div class="container">
-                    <div class="gradients-cards margin-top-20">
-                    </div>
-                </div>
-            </div>
-            <div role="tabpanel" class="tab-pane fade" id="images">
-                <div class="container margin-top-20">
-                    <div class="row">
-                        <div class="col-8"></div>
-                        <div class="col-4">
-                            <label class="btn-label float-left">Resolution: </label>
-                            <select id="resolution-select" class="form-select select-control form-control bg-secondary text-white">
-                                <option selected value="FHD">FHD 1920x1080</option>
-                                <option value="2K">2K 2560x1440</option>
-                                <option value="4K">4K 3840x2160</option>
-                                <option value="8K">8K 7680x4320</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="pictures-cards margin-top-20">
-                    </div>
-                </div>
-            </div>
-            <div role="tabpanel" class="tab-pane fade" id="judder">
-                <div class="container">
-                    <div class="judder-wrapper margin-top-20">
-                        <div class="row">
-                            <div class="col-12">
-                                <video width="640" height="480" controls>
-                                    <source src="video/judder 23.98 1080.mp4" type="video/mp4">
-                                </video>
-                                <div>Judder test - 23.98 FPS.</div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <video width="640" height="480" controls>
-                                <source src="video/judder 25 1080.mp4" type="video/mp4">
-                            </video>
-                                <div>Judder test - 25 FPS.</div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <video width="640" height="480" controls>
-                                    <source src="video/judder 29.97 1080.mp4" type="video/mp4">
-                                </video>
-                                <div>Judder test - 29.97 FPS.</div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <video width="640" height="480" controls>
-                                    <source src="video/judder 30 1080.mp4" type="video/mp4">
-                                </video>
-                                <div>Judder test - 30 FPS.</div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <video width="640" height="480" controls>
-                                    <source src="video/judder 50 1080.mp4" type="video/mp4">
-                                </video>
-                                <div>Judder test - 50 FPS.</div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <video width="640" height="480" controls>
-                                    <source src="video/judder 60 1080.mp4" type="video/mp4">
-                                </video>
-                                <div>Judder test - 60 FPS.</div>
-                            </div>
+        <div class="container-sm">
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade show active" id="colors" tabindex="0">
+                    <div class="">
+                        <div class="color-cards margin-top-20">
                         </div>
                     </div>
                 </div>
-            </div>
-            <div role="tabpanel" class="tab-pane fade" id="about">
-                <div class="container">
-                    <div class="about-info margin-top-20">
-                        <p>Welcome to the Display Colors Viewer.</p>
-                        <p>Made by LA.xdna (Gmail account)</p>
-                        <p>Source code: <a href="https://github.com/LA777/display-colors-viewer">github.com</a></p>
-                        <p>Version: v0.1.5</p>
-                        <p>Navigation:<br /> Escape key (Right mouse key) - close fullscreen mode.<br /> Right arrow key (Left mouse key) - move to next color.<br /> Left arrow key - move to previous color.<br /> Alt + 1 through Alt + 4 - jump to a specific
-                            tab.
-                            <br />
-                        </p>
-                        <p>All images are taken from <a href="https://pixabay.com">pixabay.com</a> and <a href="https://unsplash.com">unsplash.com</a></p>
+                <div role="tabpanel" class="tab-pane fade" id="gradients" tabindex="0">
+                    <div class="">
+                        <div class="gradients-cards margin-top-20">
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="images">
+                    <div class=" margin-top-20">
+                        <div class="row">
+                            <div class="col-sm"></div>
+                            <div class="col-sm"></div>
+                            <div class="col-sm d-flex justify-content-center">
+                                <div class="d-block">
+                                    <label for="resolution-select" class="btn-label">Resolution: </label>
+                                    <select id="resolution-select" class="form-select form-control bg-secondary text-white">
+                                        <option selected value="FHD">FHD 1920x1080</option>
+                                        <option value="2K">2K 2560x1440</option>
+                                        <option value="4K">4K 3840x2160</option>
+                                        <option value="8K">8K 7680x4320</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pictures-cards margin-top-20">
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="judder">
+                    <div class="">
+                        <div class="judder-wrapper margin-top-20">
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <div class="d-block">
+                                        <video width="640" height="480" controls>
+                                            <source src="video/judder 23.98 1080.mp4" type="video/mp4">
+                                        </video>
+                                        <div>Judder test - 23.98 FPS.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <div class="d-block">
+                                        <video width="640" height="480" controls>
+                                            <source src="video/judder 25 1080.mp4" type="video/mp4">
+                                        </video>
+                                        <div>Judder test - 25 FPS.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <div class="d-block">
+                                        <video width="640" height="480" controls>
+                                            <source src="video/judder 29.97 1080.mp4" type="video/mp4">
+                                        </video>
+                                        <div>Judder test - 29.97 FPS.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <div class="d-block">
+                                        <video width="640" height="480" controls>
+                                            <source src="video/judder 30 1080.mp4" type="video/mp4">
+                                        </video>
+                                        <div>Judder test - 30 FPS.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <div class="d-block">
+                                        <video width="640" height="480" controls>
+                                            <source src="video/judder 50 1080.mp4" type="video/mp4">
+                                        </video>
+                                        <div>Judder test - 50 FPS.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <div class="d-block">
+                                        <video width="640" height="480" controls>
+                                            <source src="video/judder 60 1080.mp4" type="video/mp4">
+                                        </video>
+                                        <div>Judder test - 60 FPS.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="about">
+                    <div class="">
+                        <div class="about-info margin-top-20">
+                            <p>Welcome to the Display Colors Viewer.</p>
+                            <p>Made by LA.xdna (Gmail account)</p>
+                            <p>Source code: <a href="https://github.com/LA777/display-colors-viewer">github.com</a></p>
+                            <p>Version: v0.1.6</p>
+                            <p>Navigation:
+                                <br /> Escape key (Right mouse key) - close fullscreen mode.
+                                <br /> Right arrow key (Left mouse key) - move to next color.
+                                <br /> Left arrow key - move to previous color.
+                                <br /> Alt + 1 through Alt + 4 - jump to a specific tab.
+                                <br /> F11 - show browser in fullscreen mode.
+                                <br />
+                            </p>
+                            <p>All images are taken from <a href="https://pixabay.com">pixabay.com</a> and <a href="https://unsplash.com">unsplash.com</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
