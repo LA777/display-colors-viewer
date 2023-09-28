@@ -8,7 +8,7 @@
             }
 
             var rowElement = $('div.color-cards').find('div.row').last();
-            rowElement.append(`<div class="col-sm">
+            rowElement.append(`<div class="col-sm d-flex justify-content-center">
                             <button array-index="${i}" class="btn-card color-card color-${colors[i].name}">
                             </button>
                         </div>`);
@@ -24,7 +24,7 @@
             }
 
             var rowElement = $('div.gradients-cards').find('div.row').last();
-            rowElement.append(`<div class="col-sm">
+            rowElement.append(`<div class="col-sm d-flex justify-content-center">
                             <button array-index="${i}" class="btn-card color-card color-${gradients[i].name}">
                             </button>
                         </div>`);
@@ -40,8 +40,8 @@
             }
 
             var rowElement = $('div.pictures-cards').find('div.row').last();
-            rowElement.append(`<div class="col-sm">
-                            <button array-index="${i}" class="color-card picture-card" 
+            rowElement.append(`<div class="col-sm d-flex justify-content-center">
+                            <button array-index="${i}" class="color-card picture-card"
                                 style="background-image: url('${getImageUrl(i)}')">
                             </button>
                         </div>`);
@@ -60,7 +60,7 @@
             }
 
             var rowElement = $('div.judder-box div.row').last();
-            rowElement.append(`<div class="col-sx">
+            rowElement.append(`<div class="col-sx d-flex justify-content-center">
                                   <button array-index="${i}" class="box-item">
                                   </button>
                                </div>`);
@@ -265,7 +265,7 @@
                 }
             });
 
-            $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
+            $('a[data-bs-toggle="tab"]').on('show.bs.tab', function(e) {
                 var val = $(e.target).attr('aria-controls');
                 isImagesTabActive = false;
                 isJudderTabActive = false;
